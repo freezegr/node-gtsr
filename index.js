@@ -1,3 +1,4 @@
-const { search } = require('./src/util.js')
+const util  = require('./src/util.js')
 
-exports.search = search;
+exports.search = util.search;
+exports.download = util.download;

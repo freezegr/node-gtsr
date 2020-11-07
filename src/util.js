@@ -1,7 +1,10 @@
 const fetch = require('node-fetch');
 const querystring = require('querystring');
+var youtubedl = require('youtube-dl');
+var path = require('path');
+var fs = require('fs');
 
-module.exports.search = function search(term, option){
+const search = function(term, option){
 	if(!term) throw new Error(new Error(`Couldn't fetch the api: no term`))
 	if(!option.key) throw new Error(new Error(`Couldn't fetch the api: No google api key`))
 	if(!option.maxResults) option.maxResults = 1
@@ -47,8 +50,24 @@ module.exports.search = function search(term, option){
         }
         
       })
-     resolve(results)
+     resolve(results) 
     })
     .catch(err => reject(new Error(`Couldn't fetch the api: ${err}`)));
   })
 }
+module.exports.download = function(term, option){
+  if(!term) throw new Error(new Error(`Couldn't fetch the api: no term`))
+  if(!option.key) throw new Error(new Error(`Couldn't fetch the api: No google api key`))
+  if(!option.maxResults) option.maxResults = 1
+  if(!option.type) option.type = 'mp3'
+  if(option.maxResults == 0) option.maxResults = 1 
+  search(term, option).then(result =>{
+    const res = result[0]
+    if(res.kind == 'youtube#channel') return console.log('is channel ')
+    console.log(res)
+    const video = youtubedl(res.url, ['--format=18'], { cwd: __dirname });
+    const videoPath = path.resolve(__dirname, 'downloaded', res.title + '.mp4');
+    video.pipe(fs.createWriteStream(videoPath));
+  });
+}
+module.exports.search = search;
