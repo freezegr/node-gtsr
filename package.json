@@ -1,6 +1,6 @@
 {
   "name": "@freezegold/node-ytsr",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "a youtube search api!",
   "main": "index.js",
   "scripts": {
