@@ -1,0 +1,30 @@
+{
+  "name": "@freezegold/node-ytsr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freezegr/node-ytsr.git"
+  },
+  "keywords": [
+    "youtube",
+    "search",
+    "freezegr",
+    "node",
+    "ytsr"
+  ],
+  "author": "freezegr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freezegr/node-ytsr/issues"
+  },
+  "homepage": "https://github.com/freezegr/node-ytsr#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "querystring": "^0.2.0"
+  }
+}
