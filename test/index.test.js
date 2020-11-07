@@ -1,6 +1,6 @@
 const api = require('../index.js')
 var option = {
-	key: "AIzaSyAwgJH88EP7beGPpdbXg4qRjtFJ1vXtplc",
+	key: "secret",
 	maxResults: 2
 }
 api.search('amv', option).then(res=>{
