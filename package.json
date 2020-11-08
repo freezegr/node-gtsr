@@ -24,10 +24,7 @@
   },
   "homepage": "https://github.com/freezegr/node-ytsr#readme",
   "dependencies": {
-    "fluent-ffmpeg": "^2.1.2",
     "node-fetch": "^2.6.1",
     "querystring": "^0.2.0",
-    "url-parse": "^1.4.7",
-    "youtube-dl": "^3.0.2"
   }
 }

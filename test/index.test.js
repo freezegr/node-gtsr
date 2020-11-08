@@ -1,8 +1,10 @@
 const api = require('../index.js')
 var option = {
-	key: "secret",
+	key: "AIzaSyAwgJH88EP7beGPpdbXg4qRjtFJ1vXtplc",
 	maxResults: 2
+	//type: "mp4"
 }
-api.download('free fire', option)/*.then(res=>{
+api.te('free fire', option, (err, res) =>{
+	if(err) throw err
 	console.log(res)
-})*/
+})
